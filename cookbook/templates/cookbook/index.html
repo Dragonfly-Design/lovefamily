@@ -20,14 +20,9 @@
 
 {% for page in pages %}
     <ul>
-        <li><a href="/cookbook/{{ page.page_number }}/">{{ page.title}}</a></li>
+        <li><a href="/cookbook/{{ page.page_number }}/">{{ page.title}} ({{ page.page_number}})</a><a href="/cookbook/{{ page.page_number }}/"><img src="{{ page.img_sm_url }}" width="100"/></li>
     </ul>
 {% endfor %}
 
 
 
-{% for page in pages %}
-
-    <a href="/cookbook/{{ page.page_number }}/"><img src="{{ page.img_sm_url }}" width="100"/></a>
-
-{% endfor %}
