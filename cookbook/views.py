@@ -1,7 +1,5 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Document, Page
-from settings import BASE_DIR
-
 
 # Create your views here.
 
@@ -10,9 +8,6 @@ from django.http import HttpResponse
 
 
 def index(request):
-
-    print 'index'
-    print BASE_DIR
 
     pages = None
     error_message = None

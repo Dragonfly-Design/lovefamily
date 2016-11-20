@@ -1,0 +1,33 @@
+
+
+
+<h1>The Love Family Cookbook</h1>
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'cookbook:index' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="search_terms" id="search_terms" value="{{ search_terms }}" />
+    <input type="submit" value="Search" />
+    <input type="submit" value="Clear" onclick="document.getElementById('search_terms').value='';"/>
+</form>
+
+
+
+<p/>
+
+
+{% for page in pages %}
+    <ul>
+        <li><a href="/cookbook/{{ page.page_number }}/">{{ page.title}}</a></li>
+    </ul>
+{% endfor %}
+
+
+
+{% for page in pages %}
+
+    <a href="/cookbook/{{ page.page_number }}/"><img src="{{ page.img_sm_url }}" width="100"/></a>
+
+{% endfor %}
