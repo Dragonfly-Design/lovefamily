@@ -8,7 +8,7 @@ admin.site.register(Document)
 
 @admin.register(Page)
 class PageAdmin(admin.ModelAdmin):
-    list_display = ('page_number', 'title', 'img_sm_url', 'updated')
+    list_display = ('admin_image', 'page_number', 'title', 'img_sm_url', 'updated')
     ordering = ('page_number',)
     search_fields = ('page_number', 'title', 'search_text',)
 

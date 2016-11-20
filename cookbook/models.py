@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
-
 from django.db import models
+from django.utils.safestring import mark_safe
 
 # Create your models here.
 
@@ -26,3 +26,12 @@ class Page(models.Model):
 
     def __unicode__(self):
         return u'%s (%s)' % (self.title, self.page_number)
+
+    def admin_image(self):
+        if self.img_sm_url:
+            return mark_safe('<img src="%s" width="100"/>' % self.img_sm_url)
+        else:
+            return mark_safe ('<img src=""/>')
+
+
+    admin_image.short_description = 'Image'
