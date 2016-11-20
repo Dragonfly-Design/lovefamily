@@ -133,3 +133,6 @@ STATIC_URL = '/static/'
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Allowed hosts; defend against cache poisoning attacks
+ALLOWED_HOSTS = ['*']
