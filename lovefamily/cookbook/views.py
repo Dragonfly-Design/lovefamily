@@ -7,8 +7,6 @@ def index(request):
     error_message = None
     search_terms = None
 
-    print('HELLO')
-
     try:
         search_terms = request.POST['search_terms']
         pages = Page.objects.filter(search_text__icontains=request.POST['search_terms'])
