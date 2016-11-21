@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from cookbook import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='home'),
     url(r'^cookbook/', include('cookbook.urls')),
     url(r'^admin/', admin.site.urls),
 ]

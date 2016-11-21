@@ -1,23 +1,17 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Document, Page
 
-# Create your views here.
-
-
-from django.http import HttpResponse
-
-
 def index(request):
 
     pages = None
     error_message = None
-    search_terms = ''
+    search_terms = None
 
     try:
-        search_terms = request.POST['search_terms']
-        pages = Page.objects.filter(search_text__icontains=request.POST['search_terms'])
-        if not pages:
-            error_message = "Search returned no results."
+        search_terms = request.POST['search-terms']
+        pages = Page.objects.filter(search_text__icontains=search_terms)
+        if search_terms and not pages:
+            error_message = "'%s' not found." % search_terms
     except (KeyError):
         pass
 

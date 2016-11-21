@@ -24,6 +24,9 @@ class Page(models.Model):
     created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated = models.DateTimeField(auto_now=True, blank=True, null=True)
 
+    class Meta:
+        ordering = ['page_number']
+
     def __unicode__(self):
         return u'%s (%s)' % (self.title, self.page_number)
 
