@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="325517c5-f5bd-4064-839f-5dfcd0e41efc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/templates/cookbook/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/templates/cookbook/page.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/views.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lovefamily/cookbook/migrations/__init__.py" afterPath="$PROJECT_DIR$/lovefamily/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cookbook/models.py" afterPath="$PROJECT_DIR$/cookbook/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cookbook/templates/cookbook/index.html" afterPath="$PROJECT_DIR$/cookbook/templates/cookbook/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cookbook/views.py" afterPath="$PROJECT_DIR$/cookbook/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lovefamily/urls.py" afterPath="$PROJECT_DIR$/lovefamily/urls.py" />
     </list>
     <ignored path="lovefamily.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,10 +44,10 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cookbook/templates/cookbook/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
               <folding>
-                <element signature="e#1709#1715#0" expanded="true" />
+                <element signature="e#1741#1747#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -618,7 +603,7 @@
         <state relative-caret-position="270">
           <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
           <folding>
-            <element signature="e#1709#1715#0" expanded="true" />
+            <element signature="e#1741#1747#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -869,10 +854,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cookbook/templates/cookbook/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
           <folding>
-            <element signature="e#1709#1715#0" expanded="true" />
+            <element signature="e#1741#1747#0" expanded="true" />
           </folding>
         </state>
       </provider>
