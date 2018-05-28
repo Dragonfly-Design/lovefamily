@@ -32,25 +32,33 @@ class Command(BaseCommand):
         if num:
             logger.debug("number of items to import: %s" % num)
 
-        pages = Page.objects.all()
+        pages = Page.objects.filter(ocr_search_text__isnull=True)
 
         logger.debug("Perform OCR on %u pages" % pages.count())
 
         blur = False
         threshold = False
 
-        for page in pages[:10]:
-            from skimage import io
-            image = io.imread(page.img_lg_url)
-            image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            # write the grayscale image to disk as a temporary file so we can
-            # apply OCR to it
-            filename = "{}.png".format(os.getpid())
-            cv2.imwrite(filename, gray)
-            # load the image as a PIL/Pillow image, apply OCR, and then delete
-            # the temporary file
-            text = pytesseract.image_to_string(Image.open(filename))
-            os.remove(filename)
-            page.ocr_search_text = text
-            page.save()
+        for page in pages:
+            try:
+                print page.page_number, page.title
+                from skimage import io
+                image = io.imread(page.img_lg_url)
+                image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+                gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+                # write the grayscale image to disk as a temporary file so we can
+                # apply OCR to it
+                filename = "page%s.png" % page.page_number
+                cv2.imwrite(filename, gray)
+                # load the image as a PIL/Pillow image, apply OCR, and then delete
+                # the temporary file
+                text = pytesseract.image_to_string(Image.open(filename))
+                os.remove(filename)
+                page.ocr_search_text = text
+                page.save()
+            except Exception as e:
+                print e
+            else:
+                print "*********************************"
+                print text
+

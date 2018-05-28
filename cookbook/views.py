@@ -10,13 +10,24 @@ def index(request):
 
     try:
         search_terms = request.POST['search-terms']
-        pages = Page.objects.filter(Q(title__icontains=search_terms) |
-                                    Q(manual_search_text__icontains=search_terms) |
-                                    Q(ocr_search_text__icontains=search_terms))
+
+        # Split the search string into individual terms, and then filter based on each term
+        # This effectively creates an AND query with each term, finding only products containing all terms
+        search_tokens = search_terms.split(' ')
+        pages = Page.objects.all()
+        for search_token in search_tokens:
+            pages = \
+                (pages
+                    .filter(Q(title__icontains=search_token) |
+                            Q(manual_search_text__icontains=search_token) |
+                            Q(ocr_search_text__icontains=search_token))
+                    .order_by('page_number'))
+
         if search_terms and not pages:
             error_message = "'%s' not found." % search_terms
+
     except (KeyError):
-        pass
+        error_message = "Please enter search terms"
 
     if not pages:
         pages = Page.objects.all()
