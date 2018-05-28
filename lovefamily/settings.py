@@ -122,6 +122,34 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'colored',
+        },
+    },
+    'loggers': {
+        'cookbook': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        '__main__': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+    'formatters': {
+        'colored': {
+            '()': 'cookbook.djangocolors_formatter.DjangoColorsFormatter',
+            'format': u'%(asctime)s [%(msecs)d] %(levelname)s %(module)s %(message)s',
+        },
+    },
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/

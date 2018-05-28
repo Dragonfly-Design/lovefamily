@@ -1,3 +1,4 @@
+from django.db.models import F, Q, Count
 from django.shortcuts import get_object_or_404, render
 from .models import Document, Page
 
@@ -9,7 +10,9 @@ def index(request):
 
     try:
         search_terms = request.POST['search-terms']
-        pages = Page.objects.filter(search_text__icontains=search_terms)
+        pages = Page.objects.filter(Q(title__icontains=search_terms) |
+                                    Q(manual_search_text__icontains=search_terms) |
+                                    Q(ocr_search_text__icontains=search_terms))
         if search_terms and not pages:
             error_message = "'%s' not found." % search_terms
     except (KeyError):
@@ -22,4 +25,3 @@ def index(request):
 def page(request, page_id=None):
     page = get_object_or_404(Page, page_number=page_id)
     return render(request, 'cookbook/page.html', {'page': page})
-
