@@ -83,12 +83,25 @@ DATABASES = {
 }
 '''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lovefamily',
+        'USER': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        'TEST': {
+            'NAME': 'test_lovefamily',
+        },
+    }
+}
+
+
 # Database connection
 # Sample: postgres://[user]:[password]@localhost/[dbname]
-DATABASE_URL = os.environ['DATABASE_URL']
-
 import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(default=os.environ['DATABASE_URL'])
 
 
 # Password validation
