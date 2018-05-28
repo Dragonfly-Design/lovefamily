@@ -21,6 +21,8 @@ class Page(models.Model):
     img_lg_url = models.URLField(blank=True, null=True)
     search_text = models.TextField(blank=True, null=True)
     document = models.ForeignKey(Document, blank=True, null=True, related_name="pages")
+    ocr = models.BooleanField(default=False)
+    manual = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated = models.DateTimeField(auto_now=True, blank=True, null=True)
 
