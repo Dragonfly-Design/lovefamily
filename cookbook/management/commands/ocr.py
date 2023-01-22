@@ -41,7 +41,7 @@ class Command(BaseCommand):
 
         for page in pages:
             try:
-                print page.page_number, page.title
+                print(page.page_number, page.title)
                 from skimage import io
                 image = io.imread(page.img_lg_url)
                 image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
@@ -57,8 +57,8 @@ class Command(BaseCommand):
                 page.ocr_search_text = text
                 page.save()
             except Exception as e:
-                print e
+                print(e)
             else:
-                print "*********************************"
-                print text
+                print("*********************************")
+                print(text)
 
