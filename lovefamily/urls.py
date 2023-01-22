@@ -13,15 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
+from django.urls import re_path, include
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from cookbook import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='home'),
-    url(r'^cookbook/', include('cookbook.urls')),
-    url(r'^admin/', admin.site.urls),
+    re_path(r'^$', views.index, name='home'),
+    re_path(r'^cookbook/', include('cookbook.urls')),
+    re_path(r'^admin/', admin.site.urls),
 ]
 
 #enable static files
