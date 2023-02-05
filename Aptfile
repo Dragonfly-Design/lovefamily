@@ -1,5 +1,7 @@
 
 # apt packages to be installed as part of buildpack
 
-# this package supports our custom ocr management command
+# these packages support our custom ocr management command
 libgl1
+tesseract-ocr
+tesseract-ocr-eng
