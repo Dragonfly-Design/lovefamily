@@ -1,0 +1,5 @@
+
+# apt packages to be installed as part of buildpack
+
+# this package supports our custom ocr management command
+libgl1
